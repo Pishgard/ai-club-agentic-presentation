@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0099cc">
+  <title>AI فقط Chatbot نیست! — AI Club / Quera</title>
+  <link rel="icon" href="assets/world-mark.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#cover" aria-label="شروع ارائه"><img class="brand-logo" src="assets/quera-logo.svg" alt="Quera"><span class="brand-divider"></span><span class="brand-title">AI CLUB <small>یک جهان، فراتر از گفتگو</small></span></a><div class="top-actions"><span class="live-dot"></span><span>جلسه داخلی کوئرا</span><button id="help-toggle" aria-label="راهنمای کنترل‌ها">?</button><button id="fullscreen" aria-label="تمام صفحه">⛶</button></div></header>
+  <main id="viewport" aria-label="ارائه تعاملی AI Club"><div id="world"><svg id="connections" aria-hidden="true"></svg><div id="sections"></div></div></main>
+  <aside id="help" hidden dir="rtl"><strong>کنترل‌های ارائه</strong><p>اسکرول: زوم · کشیدن: جابه‌جایی Canvas</p><p>← / → و Space: اسلاید بعد / قبل</p><p>Home / Esc: نمای کلی · End: پایان</p><p>در نمای کلی، روی اسلاید موردنظر کلیک کنید.</p></aside>
+   <footer class="bottom"><button id="map-button">نمای کلی ارائه</button><div id="breadcrumbs">AI CLUB / QUERA</div><nav aria-label="ناوبری ارائه" dir="rtl"><button id="previous" aria-label="بخش قبل">→</button><span id="counter" aria-live="polite">01 <i>/ 29</i></span><button id="next" aria-label="بخش بعد">←</button></nav></footer>
+  <div id="progress"></div><div id="announcement" class="sr-only" aria-live="polite"></div>
+  <dialog id="tool-dialog"><button class="close-dialog" aria-label="بستن">×</button><div id="tool-detail"></div></dialog>
+  <script src="catalog.js"></script>
+  <script src="content.js"></script>
+  <script src="ecosystems.js"></script>
+  <script src="visuals.js"></script>
+  <script src="agents.js"></script>
+  <script src="integrations.js"></script>
+  <script src="refinements.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
