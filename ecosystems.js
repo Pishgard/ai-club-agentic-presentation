@@ -1,10 +1,10 @@
 'use strict';
 
 function blocks(items) {
-  return `<div class="focus-grid">${items.map(([label,title,text])=>`<article><span>${label}</span><h3>${title}</h3><p>${text}</p></article>`).join('')}</div>`;
+  return `<div class="focus-grid">${items.map(([label,title,text])=>`<article><span>${rtlFlow(label)}</span><h3>${rtlFlow(title)}</h3><p>${rtlFlow(text)}</p></article>`).join('')}</div>`;
 }
 function scene(id,title,kicker,lead,items,note='') {
-  return {id,title,kicker,render:()=>`${heading(title,lead)}${blocks(items)}${note?`<div class="focus-note">${note}</div>`:''}`};
+  return {id,title,kicker,render:()=>`${heading(title,lead)}${blocks(items)}${note?`<div class="focus-note">${rtlFlow(note)}</div>`:''}`};
 }
 function example(id,title,kicker,team,input,prompt,output,name) {
   return {id,title,kicker,render:()=>`${heading(title,team)}<div class="case-layout"><article><span class="case-label">INPUT / ورودی</span><h3>${input}</h3><div class="case-prompt">${prompt}</div><button class="primary" data-copy-tool="${name}">کپی درخواست</button></article><article><span class="case-label">OUTPUT / خروجی مورد انتظار</span>${output.map((s,i)=>`<div class="case-result"><b>0${i+1}</b><p>${s}</p></div>`).join('')}<p class="section-note">سناریوی پیشنهادی برای کوئرا؛ داده و نتیجه واقعی شرکت در این مثال استفاده نشده است.</p></article></div>`};

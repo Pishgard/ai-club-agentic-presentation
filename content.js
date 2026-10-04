@@ -1,10 +1,14 @@
 'use strict';
 
 function escapeHTML(value) {
-  return String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  return rtlFlow(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function rtlFlow(value) {
+  const text=String(value);
+  return /[\u0600-\u06ff]/.test(text) ? text.replace(/→/g,'←') : text;
 }
 function heading(title, lead) {
-  return `<h2>${title}</h2><p class="intro">${lead}</p>`;
+  return `<h2>${rtlFlow(title)}</h2><p class="intro">${rtlFlow(lead)}</p>`;
 }
 function officialLink(name) {
   return `<a href="${tools[name].url}" target="_blank" rel="noopener noreferrer">وب‌سایت رسمی ↗</a>`;
